@@ -41,6 +41,11 @@ vim.api.nvim_create_user_command("PhrasePrevPunct", function()
     core.jump_before_prev_punct()
 end, {})
 
+-- NEW: Clean and Split
+vim.api.nvim_create_user_command("PhraseClean", function()
+    core.clean_and_split()
+end, {})
+
 -- Keybindings
 vim.keymap.set("n", "<leader>pi", "<cmd>PhraseIndent<CR>", { desc = "Phrase Indent" })
 vim.keymap.set("n", "<leader>po", "<cmd>PhraseOutdent<CR>", { desc = "Phrase Outdent" })
@@ -51,3 +56,5 @@ vim.keymap.set("n", "<leader>pc", "<cmd>PhraseConnector<CR>", { desc = "Phrase C
 vim.keymap.set("n", "<leader>ps", "<cmd>PhraseBreak<CR>", { desc = "Phrase Split (Break Line)" })
 vim.keymap.set("n", "<leader>pf", "<cmd>PhraseNextPunct<CR>", { desc = "Phrase Next Punctuation" })
 vim.keymap.set("n", "<leader>pb", "<cmd>PhrasePrevPunct<CR>", { desc = "Phrase Previous Punctuation" })
+
+vim.keymap.set("n", "<leader>pclean", "<cmd>PhraseClean<CR>", { desc = "Phrase Clean (Remove Numbers & Split)" })
