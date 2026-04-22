@@ -119,7 +119,7 @@ function M.jump_before_prev_punct()
     end
 end
 
--- NEW: Clean text (remove numbers and split by punctuation)
+-- NEW: Clean and Split
 function M.clean_and_split()
     local bufnr = vim.api.nvim_get_current_buf()
     local lines = vim.api.nvim_buf_get_lines(bufnr, 0, -1, false)
@@ -132,7 +132,6 @@ function M.clean_and_split()
 
     -- 2. Split by punctuation followed by space/newline
     -- We use a capture to keep the punctuation mark itself
-    -- We look for punctuation followed by optional whitespace
     text = text:gsub("([.,!?;:])%s*", "%1\n")
 
     -- 3. Clean up extra whitespace/empty lines resulting from the split

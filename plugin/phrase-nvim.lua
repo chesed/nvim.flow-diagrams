@@ -41,7 +41,6 @@ vim.api.nvim_create_user_command("PhrasePrevPunct", function()
     core.jump_before_prev_punct()
 end, {})
 
--- NEW: Clean and Split
 vim.api.nvim_create_user_command("PhraseClean", function()
     core.clean_and_split()
 end, {})
